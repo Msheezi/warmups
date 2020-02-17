@@ -1,0 +1,41 @@
+const axios = require("axios").default;
+
+// axios
+//   .get("https://jsonplaceholder.typicode.com/posts")
+//   .then(response => console.log(response));
+const getData = () => {
+  return axios.get("https://jsonplaceholder.typicode.com/posts");
+};
+
+const countUsers = async () => {
+  const users = getData().then(response => {
+    let test = response.data;
+    console.log(test);
+  });
+};
+
+countUsers();
+
+// const getBreeds = () => {
+//   try {
+//     return axios.get("https://dog.ceo/api/breeds/list/all");
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+// const countBreeds = async () => {
+//   const breeds = getBreeds()
+//     .then(response => {
+//       if (response.data.message) {
+//         console.log(
+//           `Got ${Object.entries(response.data.message).length} breeds`
+//         );
+//       }
+//     })
+//     .catch(error => {
+//       console.log(error);
+//     });
+// };
+
+// countBreeds();
